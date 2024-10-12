@@ -48,7 +48,7 @@ export const signIn = async (req, res) => {
 }
 
 export const sendOtp = async (req, res) => {
-    otpCode = Math.floor(100000 + Math.random() * 900000);
+    otpCode = Math.floor(Math.random() * 900000);
 
     const testAccount = await nodemailer.createTestAccount();
 
