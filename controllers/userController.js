@@ -2,7 +2,7 @@ import userModel from "../models/userSchama.js";
 import nodemailer from "nodemailer"
 import bcrypt from "bcrypt"
 
-let otpCode;
+let otpCode = Math.floor(100000 + Math.random() * 900000);;
 
 
 export const signUp = async (req, res) => {
@@ -48,7 +48,7 @@ export const signIn = async (req, res) => {
 }
 
 export const sendOtp = async (req, res) => {
-    otpCode = Math.floor(Math.random() * 900000);
+    otpCode = Math.floor(100000 + Math.random() * 900000);
 
     const testAccount = await nodemailer.createTestAccount();
 
